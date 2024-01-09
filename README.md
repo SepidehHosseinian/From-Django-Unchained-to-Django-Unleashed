@@ -20,11 +20,12 @@ So saddle up, partners, and let's code our way to Django freedom!
 ## Tech Stack:
 
 Python 3. x
-Django x.x
-Other relevant libraries (list them here)
-Getting Started:
 
-## Clone this repository
+Django x.x
+
+## Getting Started:
+
+###  Clone this repository
 Install the required dependencies
 Follow the instructions in the README files for each project
 Don't hesitate to reach out if you have any questions!
