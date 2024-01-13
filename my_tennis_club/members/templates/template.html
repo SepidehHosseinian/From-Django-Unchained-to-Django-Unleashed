@@ -2,7 +2,12 @@
 <html>
 <body>
   {% with firstname="Sepideh" %}
-<h1>Hello {{ firstname }}, how are you?</h1>
+  {% if greeting == 1 %}
+  <h1>Hello {{ firstname }}, how are you?</h1>
+  {% else %}
+   <h1>Bye , {{ firstname }}.</h1>
+  {% endif %}
+
 {% endwith %}
   <ul>
     {% for x in mymembers %}
