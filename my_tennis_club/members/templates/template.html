@@ -17,26 +17,5 @@
     {% endfor %}
   </ul>
 
-  {% for x in members reversed %}
-  <h1>{{ x.id }}</h1>
-  <p>
-    {{ x.firstname }}
-    {{ x.lastname }}
-  </p>
-{% endfor %}  
-<ul>
-  {% for x in emptytestobject %}
-    <li>{{ x.firstname }}</li>
-  {% empty %}
-    <li>No members</li>
-  {% endfor %}
-</ul> 
-<ul>
-  {% for x in myobject %}
-    <li>{{ x.firstname }}</li>
-  {% empty %}
-    <li>No members</li>
-  {% endfor %}
-</ul> 
 </body>
 </html>
