@@ -29,4 +29,7 @@ def testing(request):
     'greeting':2,
     'mymembers': mymembers,
   }
+   #context = {
+  # 'var1': 'John',
+  #}
   return HttpResponse(template.render(context, request))

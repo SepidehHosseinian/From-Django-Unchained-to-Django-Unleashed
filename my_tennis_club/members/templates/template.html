@@ -82,5 +82,19 @@
     <li>{{ forloop.revcounter0 }}</li>
   {% endfor %}
 </ul>
+<! –– Comments ––> 
+<h1>Welcome Everyone</h1>
+{% comment %}
+  <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+<! –– Comment Description ––> 
+<h1>Welcome Everyone</h1>
+{% comment "this was the original welcome message" %}
+    <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+<! –– Smaller Comments ––> 
+<h1>Welcome{# Everyone#}</h1>
+
+
 </body>
 </html>
