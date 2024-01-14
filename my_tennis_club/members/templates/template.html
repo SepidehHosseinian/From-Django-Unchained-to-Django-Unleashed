@@ -4,8 +4,10 @@
   {% with firstname="Sepideh" %}
   {% if greeting == 1 %}
   <h1>Hello {{ firstname }}, how are you?</h1>
-  {% else %}
-   <h1>Bye , {{ firstname }}.</h1>
+  {%  elif greeting == 2 %}
+   <h1>Welcome , {{ firstname }}.</h1>
+   {% else %}
+  <h1>Goodbye</h1>
   {% endif %}
 
 {% endwith %}
@@ -15,5 +17,70 @@
     {% endfor %}
   </ul>
 
+  {% for x in members reversed %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p>
+{% endfor %}  
+<ul>
+  {% for x in emptytestobject %}
+    <li>{{ x.firstname }}</li>
+  {% empty %}
+    <li>No members</li>
+  {% endfor %}
+</ul> 
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% empty %}
+    <li>No members</li>
+  {% endfor %}
+</ul> 
+<! –– forloop.counter ––> 
+<ul>
+  {% for x in mymembers %}
+    <li>{{ forloop.counter }}</li>
+  {% endfor %}
+</ul>
+<! –– forloop.counter0 ––> 
+<ul>
+  {% for x in mymembers %}
+    <li>{{ forloop.counter0 }}</li>
+  {% endfor %}
+</ul>  
+<! –– forloop.first ––> 
+<ul>
+  {% for x in mymembers %}
+    <li
+      {% if forloop.first %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul> 
+<! –– forloop.last ––> 
+<ul>
+  {% for x in mymembers %}
+    <li
+      {% if forloop.last %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul> 
+<! –– forloop.revcounter ––> 
+<ul>
+  {% for x in mymembers %}
+    <li>{{ forloop.revcounter }}</li>
+  {% endfor %}
+</ul> 
+<! –– forloop.revcounter0 ––> 
+<ul>
+  {% for x in mymembers %}
+    <li>{{ forloop.revcounter0 }}</li>
+  {% endfor %}
+</ul>
 </body>
 </html>
