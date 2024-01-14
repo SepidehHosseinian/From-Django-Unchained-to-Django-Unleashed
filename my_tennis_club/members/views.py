@@ -33,7 +33,13 @@ def testing(request):
   #  mydata = Member.objects.filter(firstname='Emil').values() | Member.objects.filter(firstname='Tobias').values()
   #  mydata = Member.objects.filter(Q(firstname='Emil') | Q(firstname='Tobias')).values()
   # Field Lookups
-   mydata = Member.objects.filter(firstname__startswith='L')
+  #  mydata = Member.objects.filter(firstname__startswith='L')
+  # Order By
+  #  mydata = Member.objects.all().order_by('firstname').values()
+  # Descending Order
+  #  mydata = Member.objects.all().order_by('-firstname').values()
+  # Multiple Order Bys
+   mydata = Member.objects.all().order_by('-firstname', '-id').values()
    template = loader.get_template('template.html')
    context = {
     'mymembers': mydata,
