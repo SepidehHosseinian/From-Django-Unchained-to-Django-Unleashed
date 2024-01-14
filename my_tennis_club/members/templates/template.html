@@ -1,7 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="{% static 'main.css' %}">
 <body>
-  <table border='1'>
+   <table border='1'>
     <tr>
       <th>ID</th>
       <th>Firstname</th>
@@ -14,7 +16,7 @@
         <td>{{ x.lastname }}</td>
       </tr>
     {% endfor %}
-  </table>
+  </table> 
   {% comment %} {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
   {% with firstname="Sepideh" %}
   {% if greeting == 1 %}
