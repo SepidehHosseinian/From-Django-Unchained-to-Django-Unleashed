@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <html>
 <body>
-  {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
+  <table border='1'>
+    <tr>
+      <th>ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+    </tr>
+    {% for x in mymembers %}
+      <tr>
+        <td>{{ x.id }}</td>
+          <td>{{ x.firstname }}</td>
+        <td>{{ x.lastname }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  {% comment %} {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
   {% with firstname="Sepideh" %}
   {% if greeting == 1 %}
   <h1>Hello {{ firstname }}, how are you?</h1>
@@ -89,13 +103,12 @@
   <h1>Welcome ladies and gentlemen</h1>
 {% endcomment %}
 <! –– Comment Description ––> 
-<h1>Welcome Everyone</h1>
+{% comment %} <h1>Welcome Everyone</h1> {% endcomment %}
 {% comment "this was the original welcome message" %}
     <h1>Welcome ladies and gentlemen</h1>
 {% endcomment %}
 <! –– Smaller Comments ––> 
-<h1>Welcome{# Everyone#}</h1>
-
-{% include 'footer.html' %} 
+{% comment %} <h1>Welcome{# Everyone#}</h1> {% endcomment %}
+{% comment %} {% include 'footer.html' %}  {% endcomment %}
 </body>
 </html>
