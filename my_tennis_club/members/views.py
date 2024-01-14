@@ -23,13 +23,24 @@ def main(request):
   return HttpResponse(template.render())
 
 def testing(request):
-  mymembers = Member.objects.all().values()
-  template = loader.get_template('template.html')
-  context = {
-    'greeting':2,
-    'mymembers': mymembers,
+  #  mydata = Member.objects.all()
+  #  mydata = Member.objects.all().values()
+  #  mydata = Member.objects.values_list('firstname')
+   mydata = Member.objects.filter(firstname='Emil').values()
+   template = loader.get_template('template.html')
+   context = {
+    'mymembers': mydata,
   }
+   return HttpResponse(template.render(context, request))
+ 
+  # mymembers = Member.objects.all().values()
+  # template = loader.get_template('template.html')
+  # context = {
+  #   'greeting':2,
+  #   'mymembers': mymembers,
+  # }
    #context = {
   # 'var1': 'John',
   #}
-  return HttpResponse(template.render(context, request))
+  # return HttpResponse(template.render(context, request))
+  
