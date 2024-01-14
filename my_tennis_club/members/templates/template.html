@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
+  {% include "mymenu.html" with me="TOBIAS" sponsor="W3SCHOOLS" %}
   {% with firstname="Sepideh" %}
   {% if greeting == 1 %}
   <h1>Hello {{ firstname }}, how are you?</h1>
@@ -95,6 +96,6 @@
 <! –– Smaller Comments ––> 
 <h1>Welcome{# Everyone#}</h1>
 
-
+{% include 'footer.html' %} 
 </body>
 </html>
