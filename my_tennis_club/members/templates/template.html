@@ -4,8 +4,10 @@
   {% with firstname="Sepideh" %}
   {% if greeting == 1 %}
   <h1>Hello {{ firstname }}, how are you?</h1>
-  {% else %}
-   <h1>Bye , {{ firstname }}.</h1>
+  {%  elif greeting == 2 %}
+   <h1>Welcome , {{ firstname }}.</h1>
+   {% else %}
+  <h1>Goodbye</h1>
   {% endif %}
 
 {% endwith %}
@@ -15,5 +17,26 @@
     {% endfor %}
   </ul>
 
+  {% for x in members reversed %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p>
+{% endfor %}  
+<ul>
+  {% for x in emptytestobject %}
+    <li>{{ x.firstname }}</li>
+  {% empty %}
+    <li>No members</li>
+  {% endfor %}
+</ul> 
+<ul>
+  {% for x in myobject %}
+    <li>{{ x.firstname }}</li>
+  {% empty %}
+    <li>No members</li>
+  {% endfor %}
+</ul> 
 </body>
 </html>
